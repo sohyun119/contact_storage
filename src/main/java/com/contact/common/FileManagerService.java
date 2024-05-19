@@ -46,7 +46,7 @@ public class FileManagerService {
 			return null;
 		}
 		
-		return "/images" + directoryName + file.getOriginalFilename();
+		return "/images/" + directoryName + file.getOriginalFilename();
 	}
 	
 	// remove File

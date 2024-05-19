@@ -19,5 +19,20 @@
 			, #{email}
 		)
 	</insert>
+	
+	<select id="selectContactList" resultType="com.contact.dto.ContactDTO">
+		SELECT 
+			 `CONTACT_ID` AS `contactId`
+			, `PHONE_NUMBER` AS `phoneNumber`
+			,`NAME`
+			,`EMAIL`
+			,`PROFILE_IMG` AS `profileImg`
+		FROM
+			`CONTACT`
+	</select>
+	
+	<delete id="deleteContact" parameterType="int">
+		DELETE FROM `CONTACT` WHERE `CONTACT_ID` = #{contactId}
+	</delete>
 
 </mapper>

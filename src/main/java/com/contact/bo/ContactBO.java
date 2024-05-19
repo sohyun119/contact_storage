@@ -1,12 +1,14 @@
 package com.contact.bo;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.contact.common.FileManagerService;
 import com.contact.dao.ContactDAO;
+import com.contact.dto.ContactDTO;
 
 @Service
 public class ContactBO {
@@ -23,6 +25,14 @@ public class ContactBO {
 		}
 		
 		return contactDAO.insertContact(profileImg, name, phoneNumber, email);
+	}
+	
+	public List<ContactDTO> readContactList(){
+		return contactDAO.selectContactList();
+	}
+	
+	public int deleteContact(int contactId) {
+		return contactDAO.deleteContact(contactId);
 	}
 
 }
